@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PicoHi – пикосекунден лазер за клиники | Адара ООД</title>
+  <meta name="description" content="PicoHi – пикосекунден лазер за клиники и естетични центрове. Приложения, конфигурации и накрайници. Доставка, обучение и поддръжка. Изискайте оферта." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="data:," />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PicoHi – пикосекунден лазер за клиники | Адара ООД" />
+  <meta property="og:description" content="Фокусиран микросайт за PicoHi. Изискайте оферта за доставка, обучение и поддръжка." />
+  <meta property="og:url" content="https://pico.adaraltd.com/" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --text:#eaf0ff;
+      --muted:#b9c6e6;
+      --line:rgba(255,255,255,.12);
+      --accent:#7aa7ff;
+      --accent2:#6ef3c5;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(122,167,255,.18), transparent 55%),
+                  radial-gradient(900px 600px at 80% 30%, rgba(110,243,197,.14), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 24px;
+      max-width:var(--max); margin:0 auto;
+    }
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(122,167,255,.95), rgba(110,243,197,.85));
+      box-shadow: 0 10px 30px rgba(122,167,255,.18);
+    }
+    .brand b{font-size:14px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      text-decoration:none;
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(122,167,255,.35); background: rgba(255,255,255,.07)}
+    .btn.primary{
+      border: 1px solid rgba(122,167,255,.45);
+      background: linear-gradient(135deg, rgba(122,167,255,.22), rgba(110,243,197,.14));
+    }
+    .btn.call{border-color: rgba(110,243,197,.35)}
+    .hero{padding:56px 0 18px}
+.grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:24px;
+  align-items:start;
+}
+.hero-image{align-self:stretch}
+.hero-image img{max-height:640px; object-fit:contain}
+@media (max-width: 940px){
+  .grid{grid-template-columns:1fr !important;}
+  .hero-image{order:-1;}
+  .hero-image img{width:100%; height:auto; max-height:420px; object-fit:contain;}
+  nav{display:none}
+  .topbar .actions{display:none}
+}
+
+    .card{
+      background: rgba(15,26,51,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    h1{margin:0 0 10px; font-size:34px; line-height:1.15}
+    h2{margin:0 0 10px; font-size:22px}
+    h3{margin:0 0 8px; font-size:16px; color:var(--text)}
+    p{margin:10px 0; color:var(--muted)}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px;
+      padding:7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px}
+    @media (max-width: 620px){ .kpis{grid-template-columns:1fr} }
+    .kpi{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px 12px;
+      background: rgba(255,255,255,.03);
+    }
+    .kpi b{display:block; font-size:13px; margin-bottom:4px}
+    .kpi span{font-size:12px; color:var(--muted)}
+    .section{padding:18px 0}
+    .cols2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    @media (max-width: 900px){ .cols2{grid-template-columns:1fr} }
+    ul{margin:10px 0 0 18px; color:var(--muted)}
+    li{margin:7px 0}
+    .hr{height:1px; background: var(--line); margin:16px 0}
+    .table{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .table td{
+      padding:10px 12px;
+      border-bottom: 1px solid var(--line);
+      font-size:13px;
+      color: var(--muted);
+      vertical-align:top;
+    }
+    .table td:first-child{color:var(--text); width:38%}
+    .table tr:last-child td{border-bottom:none}
+    form{display:grid; gap:10px; margin-top:10px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height: 110px; resize:vertical}
+    .fine{font-size:12px; color:var(--muted)}
+    footer{padding:28px 0 40px; color:var(--muted)}
+    footer a{color:var(--muted)}
+    .smalllinks{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+
+    /* Image styles */
+    .hero-visual{
+      margin-top:14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+    }
+    .hero-visual img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .img-card{
+      border:1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+    }
+    .img-card img{width:100%; height:auto; display:block}
+    .img-caption{
+      padding:10px 12px;
+      font-size:12px;
+      color: var(--muted);
+      border-top:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      line-height:1.4;
+    }
+    .thumbs{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 900px){ .thumbs{grid-template-columns:1fr 1fr} }
+    @media (max-width: 520px){ .thumbs{grid-template-columns:1fr} }
+  
+    .video-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+    @media (max-width: 900px){
+      .video-grid{grid-template-columns:1fr}
+    }
+    .video-card{
+      border:1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+    }
+    .video-card video{
+      width:100%;
+      height:auto;
+      display:block;
+      background: rgba(0,0,0,.25);
+    }
+    .video-card .img-caption{
+      border-top:1px solid var(--line);
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "name":"Адара ООД",
+        "url":"https://adaraltd.com",
+        "telephone":"+359885183611"
+      },
+      {
+        "@type":"Product",
+        "name":"PicoHi",
+        "description":"Пикосекунден лазер за клиники и естетични центрове. Дистрибуция от Адара ООД – доставка, обучение и поддръжка.",
+        "brand":{"@type":"Brand","name":"PicoHi"},
+        "url":"https://pico.adaraltd.com/"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="topbar">
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>PicoHi | Адара ООД</b>          
+        </div>
+      </a>
+      <nav aria-label="Навигация">
+        <a href="#applications">Приложения</a>
+        <a href="#handpieces">Накрайници</a>
+        <a href="#delivery">Доставка и сервиз</a>       
+      </nav>
+      <div class="actions">
+        <a class="btn call" href="tel:+359885183611">Обади се: 0885 183 611</a>
+        <a class="btn primary" href="#offer">Изискай оферта</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    
+    <section class="hero">
+      <div class="grid">
+        <div class="card">
+          <h1>PicoHi – пикосекунден лазер за клиники и естетични центрове</h1>
+          <p>
+            Ако търсите надеждно решение за процедури, свързани с <b>пигментации</b>, <b>татуировки</b> и
+            <b>подобряване на кожна текстура</b>, PicoHi е платформа, която можете да разгледате като инвестиция за вашата практика.
+          </p>
+
+          <div class="kpis">
+  <div class="kpi">
+    <b>Разширяване на услугите</b>
+    <span>Възможност за предлагане на висок клас процедури с широко приложение.</span>
+  </div>
+  <div class="kpi">
+    <b>Контролиран старт</b>
+    <span>Доставка, обучение и съдействие при въвеждане на апарата в работа.</span>
+  </div>
+  <div class="kpi">
+    <b>Дългосрочна поддръжка</b>
+    <span>Организирана сервизна поддръжка и съдействие при експлоатация.</span>
+  </div>
+</div>
+
+
+          <div class="actions">
+            <a class="btn primary" href="#offer">Изискай оферта</a>
+            <a class="btn call" href="tel:+359885183611">Обади се</a>
+          </div>
+
+          <div class="hr"></div>
+          
+        </div>
+
+        <div class="img-card hero-image">
+          <img src="assets/picohi-device.webp" alt="PicoHi пикосекунден лазер – устройство" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+
+    <section id="applications" class="section">
+      <div class="cols2">
+        <div class="card">
+          <h2>Приложения в практиката</h2>
+          <ul>
+            <li>Пигментни лезии (по преценка на специалист)</li>
+            <li>Татуировки (вкл. многоцветни – според конфигурацията)</li>
+            <li>Подобряване на текстура, пори и неравности</li>
+            <li>Подкрепа на процедури за skin rejuvenation</li>
+          </ul>
+          
+        </div>
+
+        <div class="card">
+          <h2>За кого е подходящ PicoHi</h2>
+          <ul>
+            <li>Дерматологични клиники</li>
+            <li>Естетични центрове с лекарски екип</li>
+            <li>Практики, които търсят висок клас апаратура и ясна възвръщаемост</li>
+          </ul>
+          <p>При запитване ще уточним очаквания обем, тип процедури и нужната конфигурация.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="handpieces" class="section">
+      <div class="card">
+        <h2>Накрайници и конфигурации</h2>
+        <p>В зависимост от целите на практиката, конфигурацията може да включва различни накрайници и оптики.</p>
+
+        <div class="thumbs">
+          <div class="img-card">
+            <img src="assets/picohi-handpiece-vmla.webp" alt="PicoHi VMLA Deep Renew" />
+            <div class="img-caption"><b>VMLA (Deep Renew)</b><br>
+            Микролещов накрайник за работа в дълбочина.<br>
+            <span class="fine">Използва се най-често за:</span> текстура и пори, skin rejuvenation, белези след акне.</div>
+          </div>
+
+          <div class="img-card">
+            <img src="assets/picohi-handpiece-zmla.webp" alt="PicoHi ZMLA Renew" />
+            <div class="img-caption"><b>ZMLA (Renew)</b><br>
+            Концентрирано въздействие в по-малки зони.<br>
+            <span class="fine">Използва се най-често за:</span> локални несъвършенства, фини белези, малки зони.</div>
+          </div>
+
+          <div class="img-card">
+            <img src="assets/picohi-handpiece-basiczoom.webp" alt="PicoHi Basic Zoom" />
+            <div class="img-caption"><b>Basic Zoom</b><br>
+            Променлив размер на петното за точкова работа.<br>
+            <span class="fine">Използва се най-често за:</span> татуировки и пигментни петна.</div>
+          </div>
+
+          <div class="img-card">
+            <img src="assets/picohi-handpiece-collimation.webp" alt="PicoHi Collimation" />
+            <div class="img-caption"><b>Collimation</b><br>
+            Стабилен лъч за равномерно покритие.<br>
+            <span class="fine">Използва се най-често за:</span> skin toning, подмладяване на по-големи зони.</div>
+          </div>
+
+          <div class="img-card">
+            <img src="assets/picohi-handpiece-blue.webp" alt="PicoHi DOE 532" />
+            <div class="img-caption"><b>DOE 532</b><br>
+            Равномерно разпределение на енергията (532 nm).<br>
+            <span class="fine">Използва се най-често за:</span> повърхностни пигментации и петна.</div>
+          </div>
+
+          <div class="img-card">
+            <img src="assets/picohi-handpiece-green.webp" alt="PicoHi DOE 1064" />
+            <div class="img-caption"><b>DOE 1064</b><br>
+            Равномерно разпределение на енергията (1064 nm).<br>
+            <span class="fine">Използва се най-често за:</span> skin toning, общо освежаване на кожата и равномерна работа върху по-големи зони.</div>
+          </div>
+        </div>
+
+
+        
+
+        <div class="hr"></div>
+        <p class="fine">
+          По запитване можем да уточним препоръчителна конфигурация според фокус: татуировки, пигментации, текстура и др.
+        </p>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="card">
+        <h2>Видео демонстрации</h2>
+        <p>Кратки клипове, които показват работа с различни накрайници и насоченост на процедурите. (Демонстрационно съдържание.)</p>
+
+        <div class="video-grid">
+          <div class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/spots.mp4" type="video/mp4">
+            </video>
+            <div class="img-caption">
+              <b>Пигментации / петна</b><br>
+              Демонстрация за насоченост към третиране на пигментни участъци (според настройките и преценката на специалист).
+            </div>
+          </div>
+
+          <div class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/tatoo.mp4" type="video/mp4">
+            </video>
+            <div class="img-caption">
+              <b>Татуировки</b><br>
+              Демонстрация на работа при услуги за премахване/изсветляване на татуировки (според конфигурацията и настройките).
+            </div>
+          </div>
+
+          <div class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/scars-vmla.mp4" type="video/mp4">
+            </video>
+            <div class="img-caption">
+              <b>VMLA – текстура / белези</b><br>
+              Демонстрация на микролещов накрайник за услуги, насочени към текстура, пори и белези (по преценка на специалист).
+            </div>
+          </div>
+
+          <div class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/scars-doe.mp4" type="video/mp4">
+            </video>
+            <div class="img-caption">
+              <b>DOE – toning / освежаване</b><br>
+              Демонстрация на равномерно разпределение на енергията за услуги тип skin toning/освежаване и работа върху по-големи зони.
+            </div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+        <p class="fine">Съдържанието е представително. Конкретните показания и параметри се определят от квалифициран специалист и според регулациите.</p>
+      </div>
+    </section>
+
+
+    <section id="delivery" class="section">
+      <div class="cols2">
+        <div class="card">
+          <h2>Какво включва доставката</h2>
+          <ul>
+            <li>Доставка и въвеждане в експлоатация</li>
+            <li>Инструктаж и обучение за работа</li>
+            <li>Съдействие при старт на услугата (позициониране, материали)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Поддръжка и сервиз</h2>
+          <ul>
+            <li>Гаранционни условия (уточняват се по оферта)</li>
+            <li>Извънгаранционна поддръжка</li>
+            <li>Логистика за части/консумативи</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer" class="section">
+      <div class="card">
+        <h2>Изискай оферта за PicoHi</h2>
+        <p>Попълнете формата и ще се свържем за уточняване на нуждите и подходяща конфигурация.</p>
+
+        <!-- Заменете FORM_ACTION с вашия Formspree endpoint -->
+        <form id="offerForm" method="POST" action="FORM_ACTION">
+          <div class="cols2">
+            <div><input name="name" placeholder="Име и фамилия" required /></div>
+            <div><input name="clinic" placeholder="Клиника / център" /></div>
+          </div>
+
+          <div class="cols2">
+            <div><input name="phone" placeholder="Телефон" required /></div>
+            <div><input type="email" name="email" placeholder="Имейл" required /></div>
+          </div>
+
+          <select name="interest">
+            <option value="Запитване за PicoHi">Запитване за PicoHi</option>
+            <option value="Искам разговор и детайли">Искам разговор и детайли</option>
+            <option value="Искам ориентировъчна оферта">Искам ориентировъчна оферта</option>
+          </select>
+
+          <textarea name="message" placeholder="Насоченост: пигментации, татуировки, текстура, обем пациенти/месец, град и др."></textarea>
+
+          <button class="btn primary" type="submit">Изпрати</button>
+          </form>
+
+        
+
+        
+    </section>
+
+    <footer class="wrap">
+      <div class="fine">
+        © <span id="y"></span> Адара ООД • PicoHi микросайт • Тел: <a href="tel:+359885183611">0885 183 611</a> •
+        <div class="smalllinks">
+          <a href="https://adaraltd.com" rel="noopener">Към корпоративния сайт adaraltd.com</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
